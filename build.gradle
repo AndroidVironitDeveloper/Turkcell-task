@@ -5,10 +5,10 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,9 +19,22 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+
     }
 }
+ext {
+    versionAppCompat = "1.1.0"
+    versionLifecycleExtensions = "2.1.0"
+    versionConstraintLayout = "1.1.3"
+    versionMaterial = "1.2.0-alpha01"
+    versionRxJava = "2.2.9"
+    versionGlide = "4.9.0"
+    versionRoom = "2.2.2"
+    versionRetrofit = "2.6.2"
+    versionGson = "2.8.5"
+    versionDagger = "2.25.2"
+}
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

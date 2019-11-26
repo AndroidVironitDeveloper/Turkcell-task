@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 29
@@ -23,11 +22,47 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    // AppCompat
+    implementation "androidx.appcompat:appcompat:$versionAppCompat"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-extensions:$versionLifecycleExtensions"
+
+    // Constraint Layout
+    implementation "androidx.constraintlayout:constraintlayout:$versionConstraintLayout"
+
+    // Material widgets
+    implementation "com.google.android.material:material:$versionMaterial"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$versionRxJava"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versionGlide"
+    kapt  "com.github.bumptech.glide:compiler:$versionGlide"
+
+    //Room
+    implementation "androidx.room:room-runtime:$versionRoom"
+    implementation "androidx.room:room-rxjava2:$versionRoom"
+    kapt "androidx.room:room-compiler:$versionRoom"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versionRetrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versionRetrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$versionRetrofit"
+
+    implementation "com.squareup.okhttp3:okhttp:4.2.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
+
+    //Gson
+    implementation "com.google.code.gson:gson:$versionGson"
+
+    //Dagger
+    implementation "com.google.dagger:dagger-android:$versionDagger"
+    kapt "com.google.dagger:dagger-compiler:$versionDagger"
+    kapt "com.google.dagger:dagger-android-processor:$versionDagger"
 }
